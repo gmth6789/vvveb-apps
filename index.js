@@ -12,10 +12,14 @@ app.use(bodyParser.urlencoded({
   limit: "200mb"
 }));
 
-app.get('/', (req, res) => {
-  res.sendFile(resolve(__dirname, 'pages/index.html'));
-});
+// app.get('/', (req, res) => {
+//   res.sendFile(resolve(__dirname, 'pages/index.html'));
+// });
 
+
+app.get('/', (req, res) => {
+  res.sendFile(resolve(__dirname, 'editor.html'));
+});
 
 app.post('/save.php', (req, res) => {
   const { file, action, startTemplateUrl, html } = req.body;
